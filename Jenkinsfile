@@ -47,7 +47,14 @@ pipeline {
 
                 }
             
-        }
+            }
+
+            stage("Archive and Clean Workspace"){
+                steps {
+                    archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+                    cleanWs()
+                }
+            }
 
             // stage('Archive and clean workspace') {
             //     steps {
@@ -57,5 +64,5 @@ pipeline {
             //     }
 
             // }
-        }  
+        }
 }
