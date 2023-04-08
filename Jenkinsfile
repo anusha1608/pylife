@@ -36,11 +36,11 @@ pipeline {
 
                 steps {
                     // withCredentials([string(credentialsId: 'DOCKERPWD', variable: 'DOCKER_TOKEN')]) {
-                    withCredentials([string(credentialsId: '', variable: 'DOCKERPWD')]) {
+                    withCredentials([string(credentialsId: 'DOCKER_PWD', variable: 'DOCKER_TOKEN')]) {
 
 
                     sh 'docker build . -t anusha1659594/pylife:latest'
-                    sh 'docker login -u anusha1659594 -p ${DOCKERPWD}'
+                    sh 'docker login -u anusha1659594 -p ${DOCKER_TOKEN}'
                     sh 'docker push anusha1659594/pylife:latest'
                     sh 'docker run -p 89:8080 -d anusha1659594/pylife:latest'
                 }
