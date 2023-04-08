@@ -40,7 +40,7 @@ pipeline {
 
 
                     sh 'docker build . -t anusha1659594/pylife:latest'
-                    sh 'docker login -u anusha1659594 -p dckr_pat_CHou9p06CRc2N6FL4RFL7bNvw8s'
+                    sh 'docker login -u anusha1659594 -p ${DOCKERPWD}'
                     sh 'docker push anusha1659594/pylife:latest'
                     sh 'docker run -p 89:8080 -d anusha1659594/pylife:latest'
                 }
