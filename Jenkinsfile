@@ -17,7 +17,7 @@ pipeline {
             stage ('AppCodeCheckout') {
                 steps {
 
-                    git 'https://github.com/anusha1608/pylife_devops_demo.git'
+                    git 'https://github.com/anusha1608/pylife.git'
 
                 }
             }
