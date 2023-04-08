@@ -6,12 +6,12 @@ pipeline {
     
     }
 
-    options {
-                timestamps()
-                buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '2'))
-                timeout(time: 240, unit: 'MINUTES')
-               // disableConcurrentBuilds()
-                }
+    // options {
+    //             timestamps()
+    //             buildDiscarder(logRotator(numToKeepStr: '5', artifactNumToKeepStr: '2'))
+    //             timeout(time: 240, unit: 'MINUTES')
+    //            // disableConcurrentBuilds()
+    //             }
 
         stages {
             stage ('AppCodeCheckout') {
@@ -48,12 +48,12 @@ pipeline {
             
         }
 
-            stage('Archive and clean workspace') {
-                steps {
+            // stage('Archive and clean workspace') {
+            //     steps {
                     
-                    archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
-                    cleanWs()
-                }
+            //         archiveArtifacts artifacts: 'target/*.jar', followSymlinks: false
+            //         cleanWs()
+            //     }
 
             }
         }  
