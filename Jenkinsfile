@@ -41,7 +41,7 @@ pipeline {
                     sh 'docker build . -t pylifedevops/app30:test'
                     sh 'docker login -u pylifedevops -p ${DOCKER_TOKEN}'
                     sh 'docker push pylifedevops/app30:test'
-                   // sh 'docker run -p 89:8080 -d pylifedevops/app30:test'
+                    sh 'docker run -p 89:8080 -d pylifedevops/app30:test'
                 }
 
                 }
@@ -55,6 +55,6 @@ pipeline {
             //         cleanWs()
             //     }
 
-            }
+            // }
         }  
 }
